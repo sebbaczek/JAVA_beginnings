@@ -2,6 +2,8 @@ import java.util.Arrays;
 
 public class Palindrom {
     public static void main(String[] args) {
+        System.out.println(isPalindrom("kokis"));
+
         String x = "zakaz";
         int y = x.length();
         int[] palindrom1 = new int[y];
@@ -23,4 +25,15 @@ public class Palindrom {
 
         }
     }
+private static boolean isPalindrom(String word){
+    for (int i = 0; i < word.length()/2; i++) {
+        if(word.charAt(i) != word.charAt(word.length()-1-i)){
+            return false;
+        }
+    }
+    return true;
+}
+
+
+
 }

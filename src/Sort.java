@@ -12,8 +12,17 @@ public class Sort {
         System.out.println(pos);
 
         int[] table = {5,13,16,7,9,12};
+        int[] table2 = {5,13,16,7,9,12,12,12};
         bubblesort(table);
         System.out.println("sorted "+Arrays.toString(table));
+
+        int searchIndex = searchIndex(table2,5);
+        System.out.println("szukany indeks to "+searchIndex);
+        searchIndex2(table2,12);
+        searchAllIndexes(table2,12);
+
+
+
     }
     private static void bubblesort(int[] array){
         for (int i = 0; i < array.length; i++) {
@@ -31,8 +40,35 @@ public class Sort {
             System.out.println("iteracja "+i+" "+Arrays.toString(array));
             System.out.println();
         }
+    }
+    /**zwraca szukany index w 1. wyst¹pieniu*/
+    private static int searchIndex(int[] array, int elem){
+        int wynik = -1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i]==elem){
+                wynik = i;
+//                System.out.println(i);
+//                return wynik;
+            }
 
-
-
+        }
+        return wynik;
+    }
+    /**wypisuje szukany index*/
+    private static void searchIndex2(int[] array, int elem){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i]==elem){
+                System.out.println(i);
+                return;
+            }
+        }
+    }
+    /**wypisuje szukany index we wszystkich wyst¹pieniach*/
+    private static void searchAllIndexes(int[] array, int elem){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i]==elem){
+                System.out.println(i);
+            }
+        }
     }
 }

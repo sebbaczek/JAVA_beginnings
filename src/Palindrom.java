@@ -3,6 +3,8 @@ import java.util.Arrays;
 public class Palindrom {
     public static void main(String[] args) {
         System.out.println(isPalindrom("kokis"));
+        System.out.println(isPalindrom2("zakaz"));
+
 
         String x = "zakaz";
         int y = x.length();
@@ -33,7 +35,20 @@ private static boolean isPalindrom(String word){
     }
     return true;
 }
-
+/**palindrom w tablicy*/
+    private static boolean isPalindrom2(String word){
+        char[] wordarr = new char[word.length()];
+        for (int i = 0; i < word.length(); i++) {
+               wordarr[i] = word.charAt(i);
+        }
+//        System.out.println(wordarr);
+        for (int i = 0; i < wordarr.length/2; i++) {
+            if(wordarr[i] != wordarr[wordarr.length-1-i]){
+                return false;
+            }
+        }
+        return true;
+    }
 
 
 }

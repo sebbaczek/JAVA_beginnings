@@ -7,8 +7,22 @@ public class CaseSwitcher {
     public static void main(String[] args) {
     String[] arr = {"SebastiaN", "kot", "TRAktor", "SaMochóD"};
         switchCase (arr);
+        /**metoda z replaceFirst - zamienia pierwsze wyst¹pienie wskazane w tej funkcji*/
+        switchCase2 (arr);
 //    String[] result = switchCase (arr);
 //        System.out.println(Arrays.toString(result));
+    }
+
+    private static void switchCase2(String[] arr) {
+        for (int s = 0; s < arr.length; s++) {
+            String newword = arr[s].toLowerCase();
+            newword = newword.replaceFirst(
+                    String.valueOf(newword.charAt(0)),
+                    String.valueOf(newword.charAt(0)).toUpperCase()
+            );
+            arr[s] = newword;
+        }
+        System.out.println(Arrays.toString(arr));
     }
 
     private static String[] switchCase(String[] arr) {

@@ -4,6 +4,8 @@ public class Palindrom {
     public static void main(String[] args) {
         System.out.println(isPalindrom("kokis"));
         System.out.println(isPalindrom2("zakaz"));
+        /**metoda dla ca³ych wyra¿eñ*/
+        System.out.println("matoda isPalindrom3 daje wynik: "+isPalindrom3("koby³a ma ma³y bok"));
 
 
         String x = "zakaz";
@@ -27,7 +29,20 @@ public class Palindrom {
 
         }
     }
-private static boolean isPalindrom(String word){
+
+    private static boolean isPalindrom3(String s) {
+        s =s.replace(" ","");
+        String result ="";
+        for (int i = s.length()-1; i >=0 ; i--) {
+            result += s.charAt(i);
+
+        }
+        System.out.println(result);
+        if (result.equals(s)){return true;}
+        return false;
+    }
+
+    private static boolean isPalindrom(String word){
     for (int i = 0; i < word.length()/2; i++) {
         if(word.charAt(i) != word.charAt(word.length()-1-i)){
             return false;

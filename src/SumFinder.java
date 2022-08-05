@@ -1,36 +1,41 @@
 import java.util.Arrays;
 
-/** Napisz program, który w tablicy znajdzie pary których suma wynosi podan¹ przez Ciebie wartoœæ*/
+/**
+ * Napisz program, który w tablicy znajdzie pary których suma wynosi podan¹ przez Ciebie wartoœæ
+ */
 public class SumFinder {
-    public static void main(String[] args) {
-        int[] arr = {34, 35, -7, 6, 78, -6, 158, 58, 76,0,5, -45, 23, 4, 5, 3,5, 660, 555, 777, 4, -7, 6, 78, -6, 158, 58, 76, -45};
-        int number = 10;
-        sumfinder(arr, number);
-    }
+        public static void main(String[] args) {
+                int[] arr = {34, 35, -7, 6, 78, -6, 158, 58, 76, 0, 5, -45, 23, 4, 5, 3, 5, 660, 555, 777, 4, -7, 6, 78, -6, 158, 58, 76, -45};
+                int number = 10;
+                sumfinder(arr, number);
+        }
 
-    private static void sumfinder(int[] arr, int number) {
-        Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
+        private static void sumfinder(int[] arr, int number) {
+                Arrays.sort(arr);
+                System.out.println(Arrays.toString(arr));
 //        int counter=0;  int k =0;
 //        int numbers[] = new int[arr.length];
 //        int[] pairings = new int[2];
-        /**trzeba usun¹æ zduplikowane wartoœci*/
-        for (int i = 0; i < arr.length; i++) {
+                /**trzeba usun¹æ zduplikowane wartoœci*/
+                for (int i = 0; i < arr.length; i++) {
 //            if((i !=arr.length-1)&&(arr[i]==arr[i+1])){continue;}
-            int el = arr[i];
-            for (int j = i+1; j < arr.length; j++) {
+
+                        for (int j = i + 1; j < arr.length; j++) {
 //                System.out.println(arr[i+1]);
 //                if ((i==j)||(arr[i]==arr[i+1])){continue;}
-                if (i==j){continue;}
-                int el2 = arr[j];
-                if (el+el2==number){
+                                if (i == j) {
+                                        continue;
+                                }
+                                int el = arr[i];
+                                int el2 = arr[j];
+                                if (el + el2 == number) {
 //                    if ((el+el2==number)&&(i!=j)){
 
-                        System.out.println(el+"  "+el2);
+                                        System.out.println(el + "  " + el2);
 
-                }
+                                }
 
-            }
+                        }
 //            for (int el2 : arr) {
 
 //                if (el + el2 == number) {
@@ -80,9 +85,8 @@ public class SumFinder {
 //                    }
 
 
-
 //            }
 //        return new int[2];
+                }
         }
-    }
 }

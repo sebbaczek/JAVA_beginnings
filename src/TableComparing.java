@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class TableComparing {
     public static void main(String[] args) {
         int[] table1 = {25, 24, 63, 53};
-        int[] table2 = {25, 24, 63, 53};
+        int[] table2 = {25, 24, 63, 51};
         int[] table3 = {25, 24, 53, 63};
         boolean wynik = compare(table1, table3);
         if (wynik) {
@@ -12,6 +12,18 @@ public class TableComparing {
         } else {
             System.out.println("Tabele nie maj¹ tej samej zawartoœci");
         }
+        /**metoda boolean equals = Arrays.equals(table1,table2)*/
+        comparemethod2(table1, table2);
+    }
+
+    private static void comparemethod2(int[] table1, int[] table2) {
+        Arrays.sort(table1);
+        Arrays.sort(table2);
+
+        boolean equals = Arrays.equals(table1,table2);
+        System.out.println("comparemethod2 equal? "+equals);
+
+
     }
 
     private static boolean compare(int[] table1, int[] table2) {

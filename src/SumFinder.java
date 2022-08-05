@@ -14,8 +14,9 @@ public class SumFinder {
 //        int counter=0;  int k =0;
 //        int numbers[] = new int[arr.length];
 //        int[] pairings = new int[2];
+        /**trzeba usun¹æ zduplikowane wartoœci*/
         for (int i = 0; i < arr.length; i++) {
-//            if((i !=arr.length-1)&&(arr[i]==arr[i+1])){continue;}\
+//            if((i !=arr.length-1)&&(arr[i]==arr[i+1])){continue;}
             int el = arr[i];
             for (int j = i+1; j < arr.length; j++) {
 //                System.out.println(arr[i+1]);

@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+ /**Napisz program, który znajdzie w tablicy zduplikowane elementy i stworzy z nich tablicê. Kolejnoœæ nie ma znaczenia.*/
 public class Duplicate {
     public static void main(String... args) {
         int[] arr = {3, 4, 5, 5, 6, 6, 7, 8, 9, 9, 9, 11, 11, 12, 13, 14, 15, 15, 0, 0, 0};

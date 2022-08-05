@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+/**Napisz program, który odwróci zawartoœæ Stringa ty³em do przodu*/
 public class Rev {
     public static void main(String[] args) {
         String s = "Sebastian5";

@@ -3,9 +3,15 @@ import java.util.Arrays;
 /**Napisz program, który znajdzie druga najwiêksz¹ wartoœæ w tablicy*/
  public class secondMax {
     public static void main(String[] args) {
-    int[] arr = {34,35,-7,6,78,-6,158,58,76,-45,23,4,5,3,660,555,777};
+    int[] arr = {34,35,-7,6,78,-6,158,58,76,-45,23,4,5,3,660,555,777,4,-7,6,78,-6,158,58,76,-45};
        int result = find2Max(arr);
+        find2Max2method(arr);
         System.out.println(result);
+    }
+
+    private static void find2Max2method(int[] arr) {
+        Arrays.sort(arr);
+        System.out.println(arr[arr.length-2]);
     }
 
     private static int find2Max(int[] arr) {

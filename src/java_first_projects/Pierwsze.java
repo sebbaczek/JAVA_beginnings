@@ -1,3 +1,5 @@
+package java_first_projects;
+
 public class Pierwsze {
     public static void main(String[] args) {
         System.out.println(2);

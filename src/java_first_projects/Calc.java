@@ -1,3 +1,5 @@
+package java_first_projects;
+
 public class Calc {
     public static void main(String[] args) {
 

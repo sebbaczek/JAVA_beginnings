@@ -1,3 +1,5 @@
+package java_first_projects;
+
 import java.util.Arrays;
 /** Napisz program, który porówna ze sob¹ zawartoœæ dwóch tablic i wydrukuje na ekranie, czy zawartoœæ jest taka sama. kolejnoœæ wejœciowa elementów nie ma znaczenia. Liczy siê tylko  zawartoœæ, np. [2, 6, 1, 12] == [12, 6, 1, 2] ale [2, 6, 1, 12] != [12, 6, 1, 3].*/
 

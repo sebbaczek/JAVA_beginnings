@@ -1,3 +1,5 @@
+package java_first_projects;
+
 public class Znaki2 {
     public static void main(String[] args) {
 int x =9;

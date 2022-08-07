@@ -1,3 +1,5 @@
+package java_first_projects;
+
 public class Silnia {
       public static void main(String[] args) {
         System.out.println(silnia(6));

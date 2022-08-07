@@ -1,3 +1,5 @@
+package java_first_projects;
+
 import java.util.Arrays;
 /**Napisz program, który odwróci zawartoœæ Stringa ty³em do przodu*/
 public class Rev {

@@ -1,3 +1,5 @@
+package java_first_projects;
+
 import java.util.Arrays;
 
 /**Napisz program, który znajdzie druga najwiêksz¹ wartoœæ w tablicy*/

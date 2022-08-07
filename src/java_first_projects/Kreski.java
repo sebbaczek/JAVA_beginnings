@@ -1,3 +1,5 @@
+package java_first_projects;
+
 public class Kreski {
     public static void main(String[] args) {
         int x =100;

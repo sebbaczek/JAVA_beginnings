@@ -1,3 +1,5 @@
+package java_first_projects;
+
 import java.util.Arrays;
 
 /** Zamieñ wszystkie s³owa w tablicy tak aby by³y one w ca³oœci napisane z wielkiej litery, natomiast

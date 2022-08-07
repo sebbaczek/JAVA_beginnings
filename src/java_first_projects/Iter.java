@@ -1,3 +1,5 @@
+package java_first_projects;
+
 import java.util.Arrays;
 
 public class Iter {

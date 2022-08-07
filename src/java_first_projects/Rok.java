@@ -1,3 +1,5 @@
+package java_first_projects;
+
 public class Rok {
     public static void main(String[] args) {
         int rok =2000;

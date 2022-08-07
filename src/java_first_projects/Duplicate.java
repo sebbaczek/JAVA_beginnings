@@ -1,3 +1,5 @@
+package java_first_projects;
+
 import java.util.Arrays;
  /**Napisz program, który znajdzie w tablicy zduplikowane elementy i stworzy z nich tablicê. Kolejnoœæ nie ma znaczenia.*/
 public class Duplicate {

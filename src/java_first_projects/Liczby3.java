@@ -1,3 +1,5 @@
+package java_first_projects;
+
 public class Liczby3 {
     public static void main(String[] args) {
         int x=3,y=40,z=5;

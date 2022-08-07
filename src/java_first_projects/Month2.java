@@ -1,3 +1,5 @@
+package java_first_projects;
+
 public class Month2 {
     public static void main(String[] args) {
         int monthnumber = 12;

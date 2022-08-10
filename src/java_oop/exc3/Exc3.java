@@ -49,6 +49,7 @@ public class Exc3 {
                                 duplcounter++;
                                 duplindex++;
                         } else{
+                                /**unikaty*/
                                 dupl2[duplindex2] = arr[i];
 //                                System.out.println(arr[i]);
                                 duplcounter2++;

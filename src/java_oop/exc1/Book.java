@@ -1,4 +1,4 @@
-package java_oop;
+package java_oop.exc1;
 
 public class Book {
         private String title;

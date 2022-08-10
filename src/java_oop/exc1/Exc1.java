@@ -1,7 +1,9 @@
-package java_oop;
+package java_oop.exc1;
+import java_oop.exc1.Book;
+
 import java.util.Arrays;
 
-/**Napisz klasê Book, która bêdzie posiada³a numer ISBN, tytu³ oraz autora. Nastêpnie stwórz pare ksi¹¿ek, dodaj je do tablicy, a nastêpnie stwórz drug¹ tablicê, która bêdzie zawiera³a elementy z tej pierwszej, ale tylko takie, których tytu³ zaczyna siê na 'h'. Nie pozwól, ¿eby nowa tablica zawiera³a null. Zobaczysz to jak j¹ wydrukujesz*/
+/**Napisz klasÄ™ Book, ktÃ³ra bÄ™dzie posiadaÅ‚a numer ISBN, tytuÅ‚ oraz autora. NastÄ™pnie stwÃ³rz pare ksiÄ…Å¼ek, dodaj je do tablicy, a nastÄ™pnie stwÃ³rz drugÄ… tablicÄ™, ktÃ³ra bÄ™dzie zawieraÅ‚a elementy z tej pierwszej, ale tylko takie, ktÃ³rych tytuÅ‚ zaczyna siÄ™ na 'h'. Nie pozwÃ³l, Å¼eby nowa tablica zawieraÅ‚a null. Zobaczysz to jak jÄ… wydrukujesz*/
 
 public class Exc1 {
         public static void main(String[] args) {

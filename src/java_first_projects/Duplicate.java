@@ -19,7 +19,7 @@ public class Duplicate {
         for (int i = 0; i < arr.length; i++) {
             /**metoda sprawdzaj¹ca czy dany element jest ju¿ duplikatem w dupl[]*/
             if (ifisinduplarray(arr[i], dupl, duplcounter)) {
-                i++;
+//                i++;
                 continue;
             }
             elem = arr[i];

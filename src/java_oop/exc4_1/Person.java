@@ -1,4 +1,4 @@
-package java_oop.exc4;
+package java_oop.exc4_1;
 
 public class Person {
         private String name;

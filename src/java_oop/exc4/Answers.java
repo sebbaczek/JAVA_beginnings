@@ -1,31 +1,29 @@
 package java_oop.exc4;
 
 public class Answers {
-        private String[] answers = {"a", "b", "c"};
-        private String correct;
+        private String[] answers;
 
-        public void Answers() {
-                this.answers = answers;
-                this.correct = tossmethod(0, 2);
-        }
-
-        public int getRandomNumber(int min, int max) {
-                return (int) ((Math.random() * (max - min)) + min);
-        }
-
-        private String tossmethod(int min, int max) {
-                String correctanswer;
-                int number = getRandomNumber(min, max);
-                switch (number) {
-                        case 0:
-                                return correctanswer = "a";
-                        case 1:
-                                return correctanswer = "b";
+      private int answersNumber;
+      private String[] switchMethod (int answersNumber){
+                switch (answersNumber){
                         case 2:
-                                return correctanswer = "c";
+                                return answers = new String[]{"a", "b"};
+                        case 3:
+                                return answers = new String[]{"a", "b", "c"};
+                        case 4:
+                                return answers = new String[]{"a", "b", "c", "d"};
+                        case 5:
+                                return answers = new String[]{"a", "b", "c", "d", "e"};
+                        case 6:
+                                return answers = new String[]{"a","b", "c", "d", "e", "f"};
                         default:
-                                return correctanswer = "a";
+                                return answers = new String[]{"a", "b", "c"};
                 }
+        }
 
+
+        public Answers(int answersNumber) {
+                this.answers = switchMethod(answersNumber);
+                this.answersNumber = answersNumber;
         }
 }

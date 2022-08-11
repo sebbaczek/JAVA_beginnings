@@ -2,8 +2,8 @@ package java_oop.exc4;
 
 public class Question {
        private String question = "question";
-        public void Question() {
+        public Question(int answersNumber, String question) {
                 this.question = question;
-                Answers answers = new Answers();
+                Answers answers = new Answers(answersNumber);
         }
 }

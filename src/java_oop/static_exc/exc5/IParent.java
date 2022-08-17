@@ -1,11 +1,13 @@
 package java_oop.static_exc.exc5;
 
 public interface IParent {
+        String classname = "IParent";
+        static String classname2 = "IParent";
         default String getName() {
-                return null;
+                return classname;
         }
 
         static String getClassName() {
-                return null;
+                return classname2;
         }
 }

@@ -15,8 +15,15 @@ public class Main {
                 Set<String> animals = new HashSet<>(List.of(animal));
 
               Iterator el =  animals.iterator();
+              int counter =0;
                while (el.hasNext()){
-                       System.out.println(el.next());
+                       if(counter== animal.length-1){
+                               System.out.print(el.next());
+                       } else{
+                               System.out.print(el.next()+", ");
+                       }
+
+                       counter++;
 
                }
 

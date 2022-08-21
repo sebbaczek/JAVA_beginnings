@@ -9,6 +9,27 @@ public class Main {
         public static void main(String[] args) {
                 String word="Sebastian Baczek";
                 method(word);
+                method2(word);
+
+
+        }
+
+        private static void method2(String word) {
+                Map<Character,Integer>map = new HashMap<>();
+
+
+                for (int i = 0; i < word.length(); i++) {
+
+                        Character sign = word.charAt(i);
+//                        int counter = map.get(sign) == null ? 0 : map.get(sign);
+                        Integer counter = map.get(sign);
+//                        map.put(sign,counter >= 1 ? counter+1 : 1);
+                        map.put(sign,counter == null ? 1 : counter+1);
+
+                }
+                System.out.println("method2: "+map);
+
+
 
         }
 

@@ -4,6 +4,8 @@ package lambda.exc4;
 
 public class Main {
         public static void main(String[] args) {
-
+                Lambda lambda=new Lambda();
+                System.out.println(lambda.count(4,5,"class"));
+                System.out.println(lambda.count(4,5,"class"));
         }
 }

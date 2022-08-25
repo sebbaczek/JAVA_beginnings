@@ -7,7 +7,15 @@ package lambda.exc2;
 
 public class Main {
         public static void main(String[] args) {
-                Lambdable2 lambdable2 = (somelambda1,somelambda2) -> somelambda2+somelambda1;k
-
+                Lambdable2 lambdable2 = (somelambda1,somelambda2) -> somelambda2+somelambda1;
+                System.out.println(lambdable2.count(5,"times"));
+                Lambdable2 lambdable3 = (int counter, String string) -> {
+                        return string+counter;
+                };
+                System.out.println(lambdable3.count(4,"hello"));
+//                Lambdable2 lambdable4 = (String string, int counter) -> {
+//                        return string+counter;
+//                };
+//                System.out.println(lambdable4.count(4,"hello"));
         }
 }

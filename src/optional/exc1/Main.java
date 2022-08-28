@@ -10,8 +10,9 @@ public class Main {
         }
 
         private static boolean ifPalindrom(StringBuilder sb) {
-                String sb2 = sb.toString();
-                String sb1 = sb.reverse().toString();
+                StringBuilder sb3 = new StringBuilder(sb.toString().replace(" ",""));
+                String sb2 = sb3.toString();
+                String sb1 = sb3.reverse().toString();
                 System.out.println(sb);
 //
                 if(sb2.equals(sb1)){

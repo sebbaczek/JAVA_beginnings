@@ -15,7 +15,11 @@ public class Main {
 //                PrintingService printingService = new PrintingserviceImpl();
 //                printingService.PrintInputDataInfo(inputData);
                 PrintingService printingService = new PrintingserviceImpl();
-              RateCalculationService rateCalculationService = new RateCalculationServiceImpl();
+              RateCalculationService rateCalculationService = new RateCalculationServiceImpl(
+                      new TimePointServiceImpl(),
+                      new AmountsCalculationServiceImp(),
+                      new ResidualCalculationServiceImpl()
+              );
 
                 MortgageCalculationService mortgageCalculationService = new MortgageCalculationServiceImpl(printingService,rateCalculationService);
         mortgageCalculationService.calculate(inputData);

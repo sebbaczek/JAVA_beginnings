@@ -10,16 +10,17 @@ public class RateCalculationServiceImpl implements RateCalculationService {
 
         private final TimePointService timePointService;
         private final AmountsCalculationService amountsCalculationService;
+        private final OverpaymentCalculationService overpaymentCalculationService;
         private final ResidualCalculationService residualCalculationService;
+        private final ReferenceCalculationService referenceCalculationService;
 
-        public RateCalculationServiceImpl(
-                TimePointService timePointService,
-                AmountsCalculationService amountsCalculationService,
-                ResidualCalculationService residualCalculationService
-        ) {
+
+        public RateCalculationServiceImpl(TimePointService timePointService, AmountsCalculationService amountsCalculationService, OverpaymentCalculationService overpaymentCalculationService, ResidualCalculationService residualCalculationService, ReferenceCalculationService referenceCalculationService) {
                 this.timePointService = timePointService;
                 this.amountsCalculationService = amountsCalculationService;
+                this.overpaymentCalculationService = overpaymentCalculationService;
                 this.residualCalculationService = residualCalculationService;
+                this.referenceCalculationService = referenceCalculationService;
         }
 
         @Override
@@ -47,16 +48,21 @@ public class RateCalculationServiceImpl implements RateCalculationService {
 
         private Rate calculateRate(BigDecimal rateNumber, InputData inputData) {
                 TimePoint timePoint = timePointService.calculate(rateNumber,inputData);
-                RateAmounts rateAmounts = amountsCalculationService.calculate(inputData);
+                Overpayment overpayment = OverpaymentCalculationService.calculate(rateNumber,inputData);
+                RateAmounts rateAmounts = amountsCalculationService.calculate(inputData,overpayment);
                 MortgageResidual mortgageResidual = residualCalculationService.calculate(rateAmounts,inputData);
+                MortgageReference mortgageReference = MortgageCalculationService.calculate(inputData);
 
-                return new Rate(timePoint, rateNumber, rateAmounts, mortgageResidual);
+                return new Rate(timePoint, rateNumber, rateAmounts, mortgageResidual,mortgageReference);
         }
 
         private Rate calculateRate(BigDecimal rateNumber, InputData inputData, Rate previousRate) {
                 TimePoint timePoint = timePointService.calculate(rateNumber,inputData);
-                RateAmounts rateAmounts = amountsCalculationService.calculate(inputData,previousRate);
+                Overpayment overpayment = OverpaymentCalculationService.calculate(rateNumber,inputData);
+                RateAmounts rateAmounts = amountsCalculationService.calculate(inputData,overpayment,previousRate);
                 MortgageResidual mortgageResidual = residualCalculationService.calculate(rateAmounts,previousRate);
-                return new Rate(timePoint, rateNumber, rateAmounts, mortgageResidual);
+                MortgageReference mortgageReference = MortgageCalculationService.calculate(inputData);
+
+                return new Rate(timePoint, rateNumber, rateAmounts, mortgageResidual,mortgageReference);
         }
 }

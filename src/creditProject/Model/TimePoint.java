@@ -14,7 +14,7 @@ public class TimePoint {
                 this.month = month;
         }
 
-        public LocalDate getLocalDate() {
+        public LocalDate getDate() {
                 return localDate;
         }
 

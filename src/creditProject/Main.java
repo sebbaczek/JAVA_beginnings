@@ -18,10 +18,16 @@ public class Main {
               RateCalculationService rateCalculationService = new RateCalculationServiceImpl(
                       new TimePointServiceImpl(),
                       new AmountsCalculationServiceImp(),
-                      new ResidualCalculationServiceImpl()
+                      new OverpaymentCalculationServiceImpl(),
+                      new ResidualCalculationServiceImpl(),
+                      new ReferenceCalculationServiceImpl()
               );
 
-                MortgageCalculationService mortgageCalculationService = new MortgageCalculationServiceImpl(printingService,rateCalculationService);
+                MortgageCalculationService mortgageCalculationService = new MortgageCalculationServiceImpl(
+                        printingService,
+                        rateCalculationService,
+                        SummaryServiceFactory.create()
+                );
         mortgageCalculationService.calculate(inputData);
 
 

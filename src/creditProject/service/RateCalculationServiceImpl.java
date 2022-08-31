@@ -3,6 +3,7 @@ package creditProject.service;
 import creditProject.Model.*;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -41,8 +42,17 @@ public class RateCalculationServiceImpl implements RateCalculationService {
                         Rate nextRate = calculateRate(index, inputData, previousRate);
                         rates.add(nextRate);
                         previousRate = nextRate;
+
+                        if(mortgageFinished(nextRate)){
+                                break;
+                        }
                 }
                 return rates;
+        }
+
+        private boolean mortgageFinished(Rate nextRate) {
+                BigDecimal toCompare = nextRate.getMortgageResidual().getAmount().setScale(0, RoundingMode.HALF_UP);
+                return BigDecimal.ZERO.equals(toCompare);
         }
 
 

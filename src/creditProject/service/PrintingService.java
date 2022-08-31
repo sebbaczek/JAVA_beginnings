@@ -13,6 +13,13 @@ public interface PrintingService {
         String PERCENT = "%";
 
         String INTEREST_SUM = "SUMA ODSETEK: ";
+        String LOSTS_SUM = "SUMA STRAT: ";
+        String OVERPAYMENT= "NADP£ATA: ";
+        String OVERPAYMENT_PROVISION = "PROWIZJA ZA NADP£ATY: ";
+        String OVERPAYMENT_REDUCE_RATE = "NADP£ATA, ZMNIEJSZENIE RATY";
+        String OVERPAYMENT_REDUCE_PERIOD = "NADP£ATA, SKRÓCENIE OKRESU";
+        String OVERPAYMENT_FREQUENCY = "SCHEMAT DOKONYWANIA NADP£AT: ";
+
         String RATE_NUMBER = "NR: ";
         String YEAR = "ROK: ";
         String MONTH = "MIESI¥C: ";

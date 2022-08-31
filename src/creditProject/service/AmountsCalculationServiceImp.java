@@ -20,7 +20,7 @@ public class AmountsCalculationServiceImp implements AmountsCalculationService {
                         case DECREASING:
                                 return calculateDecreasingRate(inputData,overpayment);
                         default:
-                                throw new RuntimeException("Case not handled");
+                        throw new MortgageException();
                 }
 
         }
@@ -33,8 +33,8 @@ public class AmountsCalculationServiceImp implements AmountsCalculationService {
                                 return calculateConstantRate(inputData,overpayment, previousRate);
                         case DECREASING:
                                 return calculateDecreasingRate(inputData,overpayment, previousRate);
-                        default:
-                                throw new RuntimeException("Case not handled");
+                        default:throw new MortgageException();
+
                 }
         }
 

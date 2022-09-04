@@ -8,7 +8,7 @@ import creditProject.Model.Summary;
 import java.util.List;
 import java.util.Optional;
 
-public class PrintingserviceImpl implements PrintingService {
+public class PrintingServiceImpl implements PrintingService {
         @Override
         public void PrintInputDataInfo(InputData inputData) {
                 StringBuilder msg = new StringBuilder(NEW_LINE);
@@ -47,15 +47,15 @@ public class PrintingserviceImpl implements PrintingService {
 
                 String format =
                         "%2s %s " +
-                                "%14s %s " +
-                                "%5s %s " +
-                                "%5s %s " +
-                                "%14s %s " +
-                                "%14s %s " +
-                                "%5s %s " +
-                                "%5s %s " +
-                                "%14s %s " +
-                                "%14s %s ";
+                                " | %s %s " +
+                                " | %s %s " +
+                                " | %s %s " +
+                                " | %s %s " +
+                                " | %s %s " +
+                                " | %s %s " +
+                                " | %s %s " +
+                                " | %s %s " +
+                                " | %-1s %1s ";
 
                 for (Rate rate : rates) {
                         String message = String.format(format,

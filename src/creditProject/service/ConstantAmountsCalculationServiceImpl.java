@@ -8,6 +8,8 @@ import creditProject.Model.RateAmounts;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import static creditProject.Utils.Calculation.calculateInterestAmount;
+
 public class ConstantAmountsCalculationServiceImpl implements ConstantAmountsCalculationService{
         private static final BigDecimal YEAR = BigDecimal.valueOf(12);
 
@@ -31,10 +33,10 @@ public class ConstantAmountsCalculationServiceImpl implements ConstantAmountsCal
 
                 BigDecimal interestPercent = inputData.getInterestPercent();
                 BigDecimal q = calculateQ(interestPercent);
-                BigDecimal residualAmount = previousRate.getMortgageResidual().getAmount();
 
-                BigDecimal referenceDuration = previousRate.getMortgageReference().getReferenceDuration();
-                BigDecimal referenceAmount = previousRate.getMortgageReference().getReferenceAmount();
+                BigDecimal residualAmount = previousRate.getMortgageResidual().getAmount();
+                BigDecimal referenceAmount = previousRate.getMortgageReference().getAmount();
+                BigDecimal referenceDuration = previousRate.getMortgageReference().getDuration();
 
                 BigDecimal interestAmount = calculateInterestAmount(residualAmount, interestPercent);
                 BigDecimal rateAmount = calculateConstantRateAmount(q, referenceAmount, referenceDuration,interestAmount,residualAmount);
@@ -68,8 +70,8 @@ public class ConstantAmountsCalculationServiceImpl implements ConstantAmountsCal
         private BigDecimal calculateQ(BigDecimal interestPercent) {
                 return interestPercent.divide(YEAR, 10, RoundingMode.HALF_UP).add(BigDecimal.ONE);
         }
-        public BigDecimal calculateInterestAmount(BigDecimal residualAmount, BigDecimal interestPercent) {
-                return residualAmount.multiply(interestPercent).divide(YEAR, 20, RoundingMode.HALF_UP);
-
-        }
+//        public BigDecimal calculateInterestAmount(BigDecimal residualAmount, BigDecimal interestPercent) {
+//                return residualAmount.multiply(interestPercent).divide(YEAR, 20, RoundingMode.HALF_UP);
+//
+//        }
 }

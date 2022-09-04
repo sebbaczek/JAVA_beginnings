@@ -6,7 +6,6 @@ import creditProject.Model.RateType;
 import creditProject.service.*;
 
 import java.math.BigDecimal;
-import java.util.Collections;
 import java.util.Map;
 
 public class Main {
@@ -14,20 +13,20 @@ public class Main {
 
                   InputData inputData = new InputData()
                         .withAmount(new BigDecimal("300000"))
-//                          .withOverpaymentSchema(Map.of(
-//                                  4,BigDecimal.valueOf(10000),
-//                                  8,BigDecimal.valueOf(10000),
-//                                  15,BigDecimal.valueOf(10000),
-//                                  28,BigDecimal.valueOf(10000)
-//                          ))
-                          .withOverpaymentSchema(Collections.emptyMap())
+                          .withOverpaymentSchema(Map.of(
+                                  4,BigDecimal.valueOf(10000),
+                                  8,BigDecimal.valueOf(10000),
+                                  15,BigDecimal.valueOf(10000),
+                                  28,BigDecimal.valueOf(10000)
+                          ))
+//                          .withOverpaymentSchema(Collections.emptyMap())
                         .withMonthsDuration(BigDecimal.valueOf(360))
-                        .withRateType(RateType.DECREASING)
-                        .withOverpaymentReduceWay(Overpayment.REDUCE_RATE);
+                        .withRateType(RateType.CONSTANT)
+                        .withOverpaymentReduceWay(Overpayment.REDUCE_PERIOD);
 
 //                PrintingService printingService = new PrintingserviceImpl();
 //                printingService.PrintInputDataInfo(inputData);
-                PrintingService printingService = new PrintingserviceImpl();
+                PrintingService printingService = new PrintingServiceImpl();
               RateCalculationService rateCalculationService = new RateCalculationServiceImpl(
                       new TimePointServiceImpl(),
                       new AmountsCalculationServiceImp(

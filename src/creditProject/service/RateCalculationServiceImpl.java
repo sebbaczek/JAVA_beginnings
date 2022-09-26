@@ -70,7 +70,7 @@ public class RateCalculationServiceImpl implements RateCalculationService {
                 TimePoint timePoint = timePointService.calculate(rateNumber,inputData);
                 Overpayment overpayment = overpaymentCalculationService.calculate(rateNumber,inputData);
                 RateAmounts rateAmounts = amountsCalculationService.calculate(inputData,overpayment,previousRate);
-                MortgageResidual mortgageResidual = residualCalculationService.calculate(rateAmounts,previousRate);
+                MortgageResidual mortgageResidual = residualCalculationService.calculate(rateAmounts,previousRate,inputData);
                 MortgageReference mortgageReference = referenceCalculationService.calculate(inputData,rateAmounts,previousRate);
 
                 return new Rate(timePoint, rateNumber, rateAmounts, mortgageResidual,mortgageReference);

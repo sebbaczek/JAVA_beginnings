@@ -6,6 +6,7 @@ import creditProject.Model.RateType;
 import creditProject.service.*;
 
 import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.Map;
 
 public class Main {
@@ -21,7 +22,7 @@ public class Main {
                           ))
 //                          .withOverpaymentSchema(Collections.emptyMap())
                         .withMonthsDuration(BigDecimal.valueOf(360))
-                        .withRateType(RateType.CONSTANT)
+                        .withRateType(RateType.DECREASING)
                         .withOverpaymentReduceWay(Overpayment.REDUCE_PERIOD);
 
 //                PrintingService printingService = new PrintingserviceImpl();

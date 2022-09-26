@@ -18,7 +18,7 @@ public class Overpayment {
                 return amount.setScale(2, RoundingMode.HALF_UP);
         }
 
-        public BigDecimal getProvisonAmount() {
+        public BigDecimal getProvisionAmount() {
                 return provisonAmount.setScale(2, RoundingMode.HALF_UP);
         }
 }

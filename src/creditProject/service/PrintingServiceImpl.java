@@ -5,6 +5,7 @@ import creditProject.Model.Overpayment;
 import creditProject.Model.Rate;
 import creditProject.Model.Summary;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 

@@ -11,7 +11,7 @@ public class SummaryServiceFactory {
         public static SummaryService create() {
                 return rates -> {
                         BigDecimal interestSum = calculate(rates, rate -> rate.getRateAmounts().getInterestAmount());
-                        BigDecimal provisions = calculate(rates, rate -> rate.getRateAmounts().getOverpayment().getProvisonAmount());
+                        BigDecimal provisions = calculate(rates, rate -> rate.getRateAmounts().getOverpayment().getProvisionAmount());
                         BigDecimal totalLosts = interestSum.add(provisions);
                         return new Summary(interestSum, provisions, totalLosts);
                 };
